@@ -11,6 +11,7 @@ const projectName = "Green Genius";
 get baseScreenSize => const Size(360, 800);
 get defaultPadding => 24.sp;
 get defaultBoxHeight => defaultPadding * 2;
+get defaultCardHeight => defaultPadding * 6;
 
 
 Curve defaultCurve = Curves.easeInOut;

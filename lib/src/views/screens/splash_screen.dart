@@ -5,6 +5,7 @@ import 'package:green_genius/src/controllers/screen_controllers/splash_screen_co
 import 'package:green_genius/src/controllers/services/dev_functions/dev_scaffold.dart';
 import 'package:green_genius/src/views/widgets/app_logo.dart';
 import 'package:green_genius/src/views/widgets/company_logo.dart';
+import 'package:green_genius/src/views/widgets/text.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -77,9 +78,9 @@ class _AppInformation extends StatelessWidget {
       children: [
         const _CompanyLogo(),
         SizedBox(height: defaultPadding / 4),
-        const _Text(baseCompanyName),
-        SizedBox(height: defaultPadding / 4),
-        Obx(() => _Text(_controller.version)),
+        const CustomTextLabel.S(text: baseCompanyName),
+        SizedBox(height: defaultPadding / 8),
+        Obx(() => CustomTextLabel.S(text: _controller.version)),
       ],
     );
   }
@@ -95,15 +96,5 @@ class _CompanyLogo extends StatelessWidget {
       width: defaultPadding,
       child: const CompanyLogo(),
     );
-  }
-}
-
-class _Text extends StatelessWidget {
-  const _Text(this.text);
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(text, style: Theme.of(context).textTheme.labelSmall?.copyWith(color: Theme.of(context).colorScheme.onSurface));
   }
 }

@@ -31,3 +31,4 @@ flutter:
 
   assets:
     - lib/assets/svg/
+    - lib/assets/image/

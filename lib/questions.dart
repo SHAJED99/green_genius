@@ -6,6 +6,7 @@ List<QuizModel> quizList = [
   // ----------------------------------------------------------------------------------------------- GLOBAL WARMING
   QuizModel(
     quizName: "GLOBAL WARMING",
+    imageUrl: "lib/assets/image/global_warming.jpeg",
     questions: [
       // 1
       QuestionModel(
@@ -30,5 +31,40 @@ List<QuizModel> quizList = [
         ],
       ),
     ],
+  ),
+
+  // ----------------------------------------------------------------------------------------------- PLASTIC POLLUTION
+  QuizModel(
+    quizName: "PLASTIC POLLUTION",
+    imageUrl: "lib/assets/image/plastic_pollution.jpeg",
+    questions: [],
+  ),
+
+  // ----------------------------------------------------------------------------------------------- AIR POLLUTION
+  QuizModel(
+    quizName: "AIR POLLUTION",
+    imageUrl: "lib/assets/image/air_pollution.jpeg",
+    questions: [],
+  ),
+  
+  // ----------------------------------------------------------------------------------------------- DEFORESTATION
+  QuizModel(
+    quizName: "DEFORESTATION",
+    imageUrl: "lib/assets/image/deforestation.jpeg",
+    questions: [],
+  ),
+
+  // ----------------------------------------------------------------------------------------------- FAST FASHION
+  QuizModel(
+    quizName: "FAST FASHION",
+    imageUrl: "lib/assets/image/first_fashion.jpeg",
+    questions: [],
+  ),
+
+  // ----------------------------------------------------------------------------------------------- RECYCLING
+  QuizModel(
+    quizName: "RECYCLING",
+    imageUrl: "lib/assets/image/recycling.jpeg",
+    questions: [],
   ),
 ];
