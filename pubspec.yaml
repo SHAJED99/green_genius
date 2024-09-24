@@ -1,0 +1,33 @@
+name: green_genius
+description: "A new Flutter project."
+publish_to: 'none'
+
+# Flutter 3.24.3
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.1 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.6
+  flutter_screenutil: ^5.9.3
+  get: ^4.6.6
+  google_fonts: ^6.2.1
+  package_info_plus: ^8.0.2
+  get_storage: ^2.1.1
+  on_process_button_widget: ^2.0.5
+  flutter_svg: ^2.0.10+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - lib/assets/svg/
