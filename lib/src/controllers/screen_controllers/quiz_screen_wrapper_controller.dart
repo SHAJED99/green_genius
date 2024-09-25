@@ -22,7 +22,7 @@ class QuizScreenWrapperController extends GetxController {
     if (selectedAnswer == null) {
       giveAnswers.add(answerIndex);
     } else {
-      giveAnswers[questionIndex.value] = answerIndex;
+      // giveAnswers[questionIndex.value] = answerIndex;
     }
 
     // devPrint("$answerIndex   -------   ${questionIndex.value}   ----    $giveAnswers");
