@@ -11,7 +11,7 @@ class CustomTextHeading extends StatelessWidget {
   final TextAlign textAlign;
   final Color? color;
   final bool? _isBig;
-  final bool isBold;
+  final bool? isBold;
   final int? maxLine;
 
   @override
@@ -29,7 +29,7 @@ class CustomTextHeading extends StatelessWidget {
       textAlign: textAlign,
       maxLines: maxLine,
       overflow: maxLine == null ? null : TextOverflow.ellipsis,
-      style: tS?.copyWith(color: color ?? (onPrimary ? t.colorScheme.onPrimary : t.colorScheme.onSurface), fontWeight: !isBold ? null : FontWeight.bold),
+      style: tS?.copyWith(color: color ?? (onPrimary ? t.colorScheme.onPrimary : t.colorScheme.onSurface), fontWeight: isBold == null ? null : (isBold! ? FontWeight.bold : FontWeight.w100)),
     );
   }
 }
@@ -55,7 +55,7 @@ class CustomTextTitle extends StatelessWidget {
   final TextAlign textAlign;
   final Color? color;
   final bool? _isBig;
-  final bool isBold;
+  final bool? isBold;
   final int? maxLine;
 
   @override
@@ -73,7 +73,7 @@ class CustomTextTitle extends StatelessWidget {
       textAlign: textAlign,
       maxLines: maxLine,
       overflow: maxLine == null ? null : TextOverflow.ellipsis,
-      style: tS?.copyWith(color: color ?? (onPrimary ? t.colorScheme.onPrimary : t.colorScheme.onSurface), fontWeight: !isBold ? null : FontWeight.bold),
+      style: tS?.copyWith(color: color ?? (onPrimary ? t.colorScheme.onPrimary : t.colorScheme.onSurface), fontWeight: isBold == null ? null : (isBold! ? FontWeight.bold : FontWeight.w100)),
     );
   }
 }
@@ -89,7 +89,7 @@ class CustomTextBody extends StatelessWidget {
   final TextAlign textAlign;
   final Color? color;
   final bool? _isBig;
-  final bool isBold;
+  final bool? isBold;
   final int? maxLine;
 
   @override
@@ -107,7 +107,7 @@ class CustomTextBody extends StatelessWidget {
       textAlign: textAlign,
       maxLines: maxLine,
       overflow: maxLine == null ? null : TextOverflow.ellipsis,
-      style: tS?.copyWith(color: color ?? (onPrimary ? t.colorScheme.onPrimary : t.colorScheme.onSurface), fontWeight: !isBold ? null : FontWeight.bold),
+      style: tS?.copyWith(color: color ?? (onPrimary ? t.colorScheme.onPrimary : t.colorScheme.onSurface), fontWeight: isBold == null ? null : (isBold! ? FontWeight.bold : FontWeight.w100)),
     );
   }
 }
@@ -123,7 +123,7 @@ class CustomTextLabel extends StatelessWidget {
   final TextAlign textAlign;
   final Color? color;
   final bool? _isBig;
-  final bool isBold;
+  final bool? isBold;
   final int? maxLine;
 
   @override
@@ -141,7 +141,7 @@ class CustomTextLabel extends StatelessWidget {
       textAlign: textAlign,
       maxLines: maxLine,
       overflow: maxLine == null ? null : TextOverflow.ellipsis,
-      style: tS?.copyWith(color: color ?? (onPrimary ? t.colorScheme.onPrimary : t.colorScheme.onSurface), fontWeight: !isBold ? null : FontWeight.bold),
+      style: tS?.copyWith(color: color ?? (onPrimary ? t.colorScheme.onPrimary : t.colorScheme.onSurface), fontWeight: isBold == null ? null : (isBold! ? FontWeight.bold : FontWeight.w100)),
     );
   }
 }
@@ -157,7 +157,7 @@ class CustomTextDisplay extends StatelessWidget {
   final TextAlign textAlign;
   final Color? color;
   final bool? _isBig;
-  final bool isBold;
+  final bool? isBold;
   final int? maxLine;
 
   @override
@@ -175,7 +175,7 @@ class CustomTextDisplay extends StatelessWidget {
       textAlign: textAlign,
       maxLines: maxLine,
       overflow: maxLine == null ? null : TextOverflow.ellipsis,
-      style: tS?.copyWith(color: color ?? (onPrimary ? t.colorScheme.onPrimary : t.colorScheme.onSurface), fontWeight: !isBold ? null : FontWeight.bold),
+      style: tS?.copyWith(color: color ?? (onPrimary ? t.colorScheme.onPrimary : t.colorScheme.onSurface), fontWeight: isBold == null ? null : (isBold! ? FontWeight.bold : FontWeight.w100)),
     );
   }
 }

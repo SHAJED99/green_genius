@@ -5,8 +5,9 @@ import 'package:green_genius/src/controllers/data_controllers/data_controller.da
 import 'package:green_genius/src/controllers/screen_controllers/home_screen_controller.dart';
 import 'package:green_genius/src/controllers/services/dev_functions/dev_scaffold.dart';
 import 'package:green_genius/src/models/data_models/quiz_model.dart';
-import 'package:green_genius/src/views/screens/quiz_screens/quiz_screen_wrapper.dart';
+import 'package:green_genius/src/views/screens/quiz_screen_wrapper.dart';
 import 'package:green_genius/src/views/widgets/app_logo.dart';
+import 'package:green_genius/src/views/widgets/floating_button.dart';
 import 'package:green_genius/src/views/widgets/text.dart';
 import 'package:on_popup_window_widget/on_popup_window_widget.dart';
 import 'package:on_process_button_widget/on_process_button_widget.dart';
@@ -19,7 +20,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final HomeScreenController _controller = Get.put(HomeScreenController());
+  @override
+  void initState() {
+    super.initState();
+    Get.put(HomeScreenController());
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    Get.delete<HomeScreenController>();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +39,6 @@ class _HomeScreenState extends State<HomeScreen> {
         body: SafeArea(
           child: Stack(
             children: [
-              Positioned(
-                right: 0,
-                child: _ThemeChange(),
-              ),
               Center(
                 child: SingleChildScrollView(
                   child: Padding(
@@ -48,6 +55,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
+              ),
+              Positioned(
+                right: 0,
+                child: _ThemeChange(),
               ),
             ],
           ),
@@ -118,9 +129,10 @@ class _ThemeChange extends StatelessWidget {
 
   Widget changeTheme(bool? isDark) {
     return OnProcessButtonWidget(
-      margin: EdgeInsets.symmetric(vertical: defaultPadding/8),
+      margin: EdgeInsets.symmetric(vertical: defaultPadding / 8),
       onDone: (_) {
         _controller.changeTheme(isDarkMode: isDark);
+        Get.back();
       },
       child: Text(isDark == null
           ? "System"
@@ -132,11 +144,7 @@ class _ThemeChange extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OnProcessButtonWidget(
-      expanded: false,
-      height: defaultBoxHeight,
-      margin: EdgeInsets.all(defaultPadding / 4),
-      backgroundColor: Colors.transparent,
+    return CustomFloatingButton(
       onTap: () async {
         await showDialog(
           context: context,

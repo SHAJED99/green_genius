@@ -12,6 +12,7 @@ get baseScreenSize => const Size(360, 800);
 get defaultPadding => 24.sp;
 get defaultBoxHeight => defaultPadding * 2;
 get defaultCardHeight => defaultPadding * 6;
+get defaultMaxWidth => 400.0;
 
 
 Curve defaultCurve = Curves.easeInOut;
