@@ -281,7 +281,7 @@ class _NextButton extends StatelessWidget {
               : OnProcessButtonWidget(
                   backgroundColor: Colors.transparent,
                   fontColor: Theme.of(context).colorScheme.onSurface,
-                  margin: EdgeInsets.only(top: defaultPadding / 2),
+                  margin: EdgeInsets.only(top: defaultPadding / 2 + borderWidth1, left: borderWidth1, right: borderWidth1, bottom: borderWidth1),
                   border: Border.all(
                     strokeAlign: BorderSide.strokeAlignOutside,
                     width: borderWidth1,
