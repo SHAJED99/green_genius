@@ -48,7 +48,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         const AppLogo(),
                         SizedBox(height: defaultPadding),
-                        CustomTextBody(text: "PICK A QUIZ!", color: Theme.of(context).colorScheme.primary),
+                        CustomTextBody(
+                          text: "PICK A QUIZ!",
+                          isBold: true,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
                         SizedBox(height: defaultPadding),
                         _QuizMenu(),
                       ],
@@ -110,7 +114,7 @@ class _QuizCard extends StatelessWidget {
                   child: const AspectRatio(aspectRatio: 1),
                 ),
                 SizedBox(height: defaultPadding / 2),
-                CustomTextBody.S(
+                CustomTextBody(
                   text: quiz.quizName,
                   textAlign: TextAlign.center,
                 ),

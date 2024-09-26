@@ -1,6 +1,6 @@
 class AnswerModel {
   final String answer;
-  final String note;
+  final bool isCorrect;
 
-  AnswerModel({required this.answer, this.note = ""});
+  AnswerModel({required this.answer, this.isCorrect = false});
 }

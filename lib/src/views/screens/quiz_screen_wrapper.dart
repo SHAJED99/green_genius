@@ -4,6 +4,7 @@ import 'package:green_genius/components.dart';
 import 'package:green_genius/src/controllers/screen_controllers/quiz_screen_wrapper_controller.dart';
 import 'package:green_genius/src/controllers/services/dev_functions/dev_scaffold.dart';
 import 'package:green_genius/src/controllers/services/functions/int_conversion.dart';
+import 'package:green_genius/src/models/data_models/answer_model.dart';
 import 'package:green_genius/src/models/data_models/question_model.dart';
 import 'package:green_genius/src/models/data_models/quiz_model.dart';
 import 'package:green_genius/src/views/widgets/animated_size_widget.dart';
@@ -66,7 +67,7 @@ class _QuizScreenWrapperState extends State<QuizScreenWrapper> {
                   ],
                 ),
               ),
-              Positioned(child: _GoBack()),
+              const Positioned(child: _GoBack()),
             ],
           ),
         ),
@@ -76,36 +77,41 @@ class _QuizScreenWrapperState extends State<QuizScreenWrapper> {
 }
 
 class _GoBack extends StatelessWidget {
-  _GoBack();
-  final QuizScreenWrapperController _controller = Get.find();
+  const _GoBack();
 
   @override
   Widget build(BuildContext context) {
     return CustomFloatingButton(
       onTap: () async {
-        if (_controller.showResult) {
-          Get.until((route) => route.isFirst || route.settings.name == "/HomeScreen");
-          return;
-        }
-
-        await showDialog(
-          context: context,
-          builder: (context) {
-            return OnPopupWindowWidget(
-              title: const Text("Do you want to quit?"),
-              child: OnProcessButtonWidget(
-                onDone: (_) => Get.until((route) => route.isFirst || route.settings.name == "/HomeScreen"),
-                child: const Text("Quit"),
-              ),
-            );
-          },
-        );
-
+        await _goBack(context);
         return;
       },
       child: const Icon(Icons.arrow_left_sharp),
     );
   }
+}
+
+Future<void> _goBack(BuildContext context) async {
+  final QuizScreenWrapperController controller = Get.find();
+  if (controller.showResult) {
+    Get.until((route) => route.isFirst || route.settings.name == "/HomeScreen");
+    return;
+  }
+
+  await showDialog(
+    context: context,
+    builder: (context) {
+      return OnPopupWindowWidget(
+        title: const Text("Do you want to quit?"),
+        child: OnProcessButtonWidget(
+          onDone: (_) => Get.until((route) => route.isFirst || route.settings.name == "/HomeScreen"),
+          child: const Text("Quit"),
+        ),
+      );
+    },
+  );
+
+  return;
 }
 
 class _HeadingText extends StatelessWidget {
@@ -115,10 +121,10 @@ class _HeadingText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomTextHeading.L(
+    return CustomTextHeading.S(
       text: text,
       color: Theme.of(context).colorScheme.onSurface,
-      isBold: false,
+      // isBold: false,
       textAlign: TextAlign.center,
     );
   }
@@ -141,7 +147,7 @@ class _QuestionCard extends StatelessWidget {
           SizedBox(height: defaultPadding / 2),
 
           // Question Index
-          CustomTextLabel.L(
+          CustomTextLabel(
             text: "QUESTION: ${_controller.questionIndex.value + 1}/${_controller.quiz.questions.length}",
             isBold: true,
           ),
@@ -162,24 +168,25 @@ class _MCQButton extends StatelessWidget {
 
   final QuizScreenWrapperController _controller = Get.find();
 
-  bool? get isCorrect {
-    int? selectedAnswer = _controller.selectedAnswer;
+  bool? get isClickedCorrect {
+    AnswerModel? selectedAnswer = _controller.selectedAnswer;
     // Check if Answer for the question is selected
     if (selectedAnswer != null) {
-      int correctAnswer = _controller.quiz.questions.elementAt(_controller.questionIndex.value).correctAnswer;
-      // Show the correct answer
-      if (index == correctAnswer) return true;
-      // Selected answer, but not correct
-      if (index == selectedAnswer && index != correctAnswer) return false;
+      AnswerModel mcqAnswer = _controller.quiz.questions.elementAt(_controller.questionIndex.value).answers.elementAt(index);
+      // Is correct
+      if (mcqAnswer.isCorrect) return true;
+
+      // Is selected and not correct
+      if (selectedAnswer.answer == mcqAnswer.answer && !mcqAnswer.isCorrect) return false;
     }
 
     return null;
   }
 
   Color? getColor(BuildContext context) {
-    return isCorrect == null
+    return isClickedCorrect == null
         ? null
-        : isCorrect!
+        : isClickedCorrect!
             ? Theme.of(context).colorScheme.primary
             : Theme.of(context).colorScheme.error;
   }
@@ -197,7 +204,7 @@ class _MCQButton extends StatelessWidget {
             textAlign: TextAlign.left,
             fontColor: getColor(context) != null ? null : Theme.of(context).colorScheme.onSecondaryContainer,
             backgroundColor: getColor(context) ?? Theme.of(context).colorScheme.primaryContainer,
-            onDone: (_) => _controller.checkAnswer(index),
+            onDone: (_) => _controller.checkAnswer(question.answers.elementAt(index)),
             child: Text("${index.getAlphabetForIndex()}. ${question.answers.elementAt(index).answer}"),
           ),
         );
@@ -238,7 +245,7 @@ class _ShowNote extends StatelessWidget {
                       SizedBox(height: defaultPadding / 2),
                       CustomTextBody(
                         textAlign: TextAlign.center,
-                        text: question.answers.elementAt(_controller.selectedAnswer!).note,
+                        text: question.explanation,
                       ),
                     ],
                   ),
