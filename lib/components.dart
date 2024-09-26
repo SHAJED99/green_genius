@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 //! ------------------------------------------------------------------------------------------------ Company Information
-const baseCompanyName = "Polygon Technology";
+const baseCompanyName = "";
 const projectName = "Green Genius";
 
 //! ------------------------------------------------------------------------------------------------ Sizes

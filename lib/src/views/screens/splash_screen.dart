@@ -76,9 +76,9 @@ class _AppInformation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const _CompanyLogo(),
+        // const _CompanyLogo(),
         SizedBox(height: defaultPadding / 4),
-        const CustomTextLabel.S(text: baseCompanyName),
+        // const CustomTextLabel.S(text: baseCompanyName),
         SizedBox(height: defaultPadding / 8),
         Obx(() => CustomTextLabel.S(text: _controller.version)),
       ],
