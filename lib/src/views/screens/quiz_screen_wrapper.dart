@@ -37,38 +37,46 @@ class _QuizScreenWrapperState extends State<QuizScreenWrapper> {
 
   @override
   Widget build(BuildContext context) {
-    return DevScaffold(
-      child: Scaffold(
-        body: SafeArea(
-          child: Stack(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: defaultPadding, vertical: defaultPadding),
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: Center(
-                        child: SingleChildScrollView(
-                          child: CustomAnimatedSize(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                const AppLogo(),
-                                SizedBox(height: defaultPadding),
-                                _QuestionCard(),
-                                _Result(),
-                              ],
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) async {
+        if (didPop) return;
+
+        await _goBack(context);
+      },
+      child: DevScaffold(
+        child: Scaffold(
+          body: SafeArea(
+            child: Stack(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: defaultPadding, vertical: defaultPadding),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: Center(
+                          child: SingleChildScrollView(
+                            child: CustomAnimatedSize(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  const AppLogo(),
+                                  SizedBox(height: defaultPadding),
+                                  _QuestionCard(),
+                                  _Result(),
+                                ],
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                    _NextButton(),
-                  ],
+                      _NextButton(),
+                    ],
+                  ),
                 ),
-              ),
-              const Positioned(child: _GoBack()),
-            ],
+                const Positioned(child: _GoBack()),
+              ],
+            ),
           ),
         ),
       ),
