@@ -43,7 +43,7 @@ List<QuizModel> quizList = [
       ),
       // 4
       QuestionModel(
-        question: "Higher temperatures lead to the rise of sea levels due to the rise of what?",
+        question: "Higher temperatures lead to the rise of sea levels due to the melting of what?",
         explanation: "Sea levels are predicted to rise 20 feet by 2050 if the polar ice caps continue to melt at the current rate.",
         answers: [
           AnswerModel(answer: "Mountains"),
@@ -73,13 +73,13 @@ List<QuizModel> quizList = [
     questions: [
       // 1
       QuestionModel(
-        question: "What happens to plastic, when it's thrown away?",
+        question: "What happens to plastic when it's thrown away?",
         explanation: "Plastic breaks down into tiny fragments known as microplastics or nano-plastics. Because plastic is not biodegradable, it does not decompose fully but instead continues to break into increasingly smaller pieces over time.",
         answers: [
           AnswerModel(answer: "It fully disintegrates"),
           AnswerModel(answer: "Partially broken down", isCorrect: true),
           AnswerModel(answer: "All of it is recycled"),
-          AnswerModel(answer: "None of the above"),
+          AnswerModel(answer: "None of the mentioned"),
         ],
       ),
       // 2
@@ -90,13 +90,13 @@ List<QuizModel> quizList = [
           AnswerModel(answer: "Mistakes it for food"),
           AnswerModel(answer: "They get tangled in it"),
           AnswerModel(answer: "Bacteria on plastic causes coral diseases"),
-          AnswerModel(answer: "All of the above", isCorrect: true),
+          AnswerModel(answer: "All of the mentioned", isCorrect: true),
         ],
       ),
       // 3
       QuestionModel(
-        question: "How many million tons of plastic are dumped into our oceans annually?",
-        explanation: "According to the UNEP, at least 11 million tons of plastic are dumped into our oceans each year. That’s the equivalent of dumping one garbage truck full of plastic into the ocean every minute. If nothing is done, this number could rise to two garbage trucks a minute by 2030 and four per minute by 2050!",
+        question: "How many million tons of plastic is dumped into our oceans annually?",
+        explanation: "According to the UNEP, at least 11 million tons of plastic is dumped into our oceans each year. That’s the equivalent of dumping one garbage truck full of plastic into the ocean every minute. If nothing is done, this number could rise to two garbage trucks a minute by 2030 and four per minute by 2050!",
         answers: [
           AnswerModel(answer: "2 million tons"),
           AnswerModel(answer: "5 million tons"),
@@ -147,8 +147,8 @@ List<QuizModel> quizList = [
       ),
       // 2
       QuestionModel(
-        question: "Which of these vehicles does not cause air pollution?",
-        explanation: "Using a bicycle means that no fuel is burned, hence no Carbon Dioxide gas is emitted.",
+        question: "Which of these vehicles do not cause air pollution?",
+        explanation: "Using a bicycle means that no fuel is burned, hence no carbon dioxide gas is emitted.",
         answers: [
           AnswerModel(answer: "Car"),
           AnswerModel(answer: "Lorry"),
@@ -180,7 +180,7 @@ List<QuizModel> quizList = [
       ),
       // 5
       QuestionModel(
-        question: "How to measure Nitrogen dioxide levels?",
+        question: "What is an appropriate method for measuring nitrogen dioxide levels?",
         explanation: "Since nitrogen dioxide is gaseous, using a diffusion tube would be the most appropriate way to measure the volume of the gas.",
         answers: [
           AnswerModel(answer: "A ruler"),
@@ -227,7 +227,7 @@ List<QuizModel> quizList = [
           AnswerModel(answer: "Harming the economy"),
           AnswerModel(answer: "Loss of wildlife"),
           AnswerModel(answer: "Harming Indigenous people"),
-          AnswerModel(answer: "None of the above", isCorrect: true),
+          AnswerModel(answer: "None of the mentioned", isCorrect: true),
         ],
       ),
       // 4
@@ -238,7 +238,7 @@ List<QuizModel> quizList = [
           AnswerModel(answer: "Mining"),
           AnswerModel(answer: "Oil extraction"),
           AnswerModel(answer: "Urban expansion"),
-          AnswerModel(answer: "All of the above", isCorrect: true),
+          AnswerModel(answer: "All of the mentioned", isCorrect: true),
         ],
       ),
       // 5
@@ -259,6 +259,69 @@ List<QuizModel> quizList = [
   QuizModel(
     quizName: "FAST FASHION",
     imageUrl: "lib/assets/image/first_fashion.jpeg",
+    questions: [
+      // 1
+      QuestionModel(
+        question: "What is the worth of the fast fashion industry?",
+        explanation: "According to estimations and calculations, and moreover reports by many organizations prove that the fast fashion industry is worth around 1 trillion dollars.",
+        answers: [
+          AnswerModel(answer: "1 trillion dollars", isCorrect: true),
+          AnswerModel(answer: "5 trillion dollars"),
+          AnswerModel(answer: "10 billion dollars"),
+          AnswerModel(answer: "500 million dollars"),
+        ],
+      ),
+      // 2
+      QuestionModel(
+        question: "Usage of what material in the fast fashion industry causes the most harm?",
+        explanation: "When taken to landfill sites, polyester contains harmful toxins that can leach into the soil and contaminate the water.",
+        answers: [
+          AnswerModel(answer: "Cotton"),
+          AnswerModel(answer: "Silk"),
+          AnswerModel(answer: "Polyester", isCorrect: true),
+          AnswerModel(answer: "Nylon"),
+        ],
+      ),
+      // 3
+      QuestionModel(
+        question: "Wearing your clothes helps to cut what?",
+        explanation: "If you wear your clothes more, it means that the tendency to buy new clothes will decrease, hence cutting carbon emissions.",
+        answers: [
+          AnswerModel(answer: "Carbon emission", isCorrect: true),
+          AnswerModel(answer: "Deforestation"),
+          AnswerModel(answer: "Microplastics"),
+          AnswerModel(answer: "All of the mentioned"),
+        ],
+      ),
+      // 4
+      QuestionModel(
+        question: "The fast fashion industry is accountable for what amount of the world's total carbon emission?",
+        explanation: "Reports show that the textiles and clothing industry contributes to 10% of the world's total carbon emission.",
+        answers: [
+          AnswerModel(answer: "5%"),
+          AnswerModel(answer: "10%", isCorrect: true),
+          AnswerModel(answer: "50%"),
+          AnswerModel(answer: "90%"),
+        ],
+      ),
+      // 5
+      QuestionModel(
+        question: "What is the most sustainable fabric?",
+        explanation: "Linen is biodegradable and grows without synthetic aid, making it the most sustainable fabric.",
+        answers: [
+          AnswerModel(answer: "Cotton"),
+          AnswerModel(answer: "Nylon"),
+          AnswerModel(answer: "Linen", isCorrect: true),
+          AnswerModel(answer: "Gold"),
+        ],
+      ),
+    ],
+  ),
+
+  // ----------------------------------------------------------------------------------------------- RECYCLING
+  QuizModel(
+    quizName: "RECYCLING",
+    imageUrl: "lib/assets/image/recycling.jpeg",
     questions: [
       // 1
       QuestionModel(
@@ -312,70 +375,7 @@ List<QuizModel> quizList = [
           AnswerModel(answer: "Gold"),
           AnswerModel(answer: "Silver"),
           AnswerModel(answer: "Copper"),
-          AnswerModel(answer: "All of the above", isCorrect: true),
-        ],
-      ),
-    ],
-  ),
-
-  // ----------------------------------------------------------------------------------------------- RECYCLING
-  QuizModel(
-    quizName: "RECYCLING",
-    imageUrl: "lib/assets/image/recycling.jpeg",
-    questions: [
-      // 1
-      QuestionModel(
-        question: "What is the worth of the fast fashion industry?",
-        explanation: "According to estimation and calculations, and moreover reports by many organizations proof that the fast fashion industry is worth around 1 trillion dollars.",
-        answers: [
-          AnswerModel(answer: "1 trillion dollars", isCorrect: true),
-          AnswerModel(answer: "5 trillion dollars"),
-          AnswerModel(answer: "10 billion dollars"),
-          AnswerModel(answer: "500 million dollars"),
-        ],
-      ),
-      // 2
-      QuestionModel(
-        question: "Usage of what material in the fast fashion industry causes the most harm?",
-        explanation: "When taken to landfill sites, polyester contains harmful toxins that can leach into the soil and contaminate the water.",
-        answers: [
-          AnswerModel(answer: "Cotton"),
-          AnswerModel(answer: "Silk"),
-          AnswerModel(answer: "Polyester", isCorrect: true),
-          AnswerModel(answer: "Nylon"),
-        ],
-      ),
-      // 3
-      QuestionModel(
-        question: "Wearing your clothes helps to cut what?",
-        explanation: "If you wear your clothes more, it means the tendency to buy new clothes will decrease, hence cutting carbon emissions.",
-        answers: [
-          AnswerModel(answer: "Carbon emission", isCorrect: true),
-          AnswerModel(answer: "Deforestation"),
-          AnswerModel(answer: "Microplastics"),
-          AnswerModel(answer: "All of the above"),
-        ],
-      ),
-      // 4
-      QuestionModel(
-        question: "The fast fashion industry is accountable for what amount of the world's total carbon emission?",
-        explanation: "Reports show that the textiles and clothing industry contributes to 10% of the world's total carbon emission.",
-        answers: [
-          AnswerModel(answer: "5%"),
-          AnswerModel(answer: "10%", isCorrect: true),
-          AnswerModel(answer: "50%"),
-          AnswerModel(answer: "90%"),
-        ],
-      ),
-      // 5
-      QuestionModel(
-        question: "What is the most sustainable fabric?",
-        explanation: "Linen is biodegradable and grows without synthetic aid, making it the most sustainable fabric.",
-        answers: [
-          AnswerModel(answer: "Cotton"),
-          AnswerModel(answer: "Nylon"),
-          AnswerModel(answer: "Linen", isCorrect: true),
-          AnswerModel(answer: "Gold"),
+          AnswerModel(answer: "All of the mentioned", isCorrect: true),
         ],
       ),
     ],
