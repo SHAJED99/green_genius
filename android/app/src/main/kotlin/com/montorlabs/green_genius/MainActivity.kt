@@ -1,4 +1,4 @@
-package com.example.green_genius
+package com.montorlabs.green_genius
 
 import io.flutter.embedding.android.FlutterActivity
 
